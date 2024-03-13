@@ -1,0 +1,15 @@
+body{
+    background-color: powderblue;
+    
+}
+
+.formulario-container {
+    position: absolute;
+    top: 50%;
+    right: 20px; /* Ajusta la distancia desde el borde derecho */
+    transform: translateY(-50%);
+  }
+
+  .nav-link{
+    color: #9400d3;
+  }

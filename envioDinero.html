@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wallet - Enviar Dinero</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    body {
+      padding: 20px;
+      background-color: plum;
+      color: yellow;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .hidden {
+
+      display: none;
+
+    }
+
+    /* Personalización de botones */
+    .btn-custom-lg {
+      background-color: #ff5733;
+      border-color: #ff5733;
+      color: white;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+    <div class="bg-dark p-4">
+      
+      <span class="text-body-secondary"></span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="nav-link" href="index.html" id="log_out">Log-out</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Comunidad D!P!</h1>
+    <div id="contactoForm" class="hidden">
+      <form>
+        <div class="form-group">
+          <input type="text" id="nombre" class="form-control" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+          <input type="text" id="cuenta" class="form-control" placeholder="Cuenta">
+        </div>
+        <div class="form-group">
+          <input type="text" id="alias" class="form-control" placeholder="Alias">
+        </div>
+        <div class="form-group">
+          <input type="text" id="banco" class="form-control" placeholder="Banco">
+        </div>
+        <button type="button" class="btn btn-primary" onclick="agregarContacto()">Agregar contacto</button>
+      </form>
+    </div>
+    <div id="contactos">
+      <label for="contactoSelect">Selecciona un contacto:</label>
+      <select id="contactoSelect" class="form-control"></select>
+    </div>
+    <button id="mostrarForm" class="btn btn-primary">Mostrar formulario de contacto</button>
+    <a id="botonDepositar" href="depositoDigital.html" class="btn-custom-lg">Depósita</a>
+    <a href="menuInicioDigital.html" class="btn btn-secondary">Volver al Menú Principal</a>
+  </div>
+
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+  <dotlottie-player src="https://lottie.host/a8be06e9-eefb-41d2-88f7-117a643cbc8e/iEk89PEfi0.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+
+  <script src="js/envioDinero.js"></script>
+
+
+<script>  document.querySelector("#mostrarForm").addEventListener("click", function() {
+    const formulario = document.getElementById("contactoForm");
+    formulario.classList.toggle("hidden");
+
+    // Al mostrar el formulario, deshabilitar el botón de "Depósita" si no hay contactos agregados
+    document.getElementById("botonDepositar").disabled = contactos.length === 0;
+});
+</script>
+</body>
+</html>
+

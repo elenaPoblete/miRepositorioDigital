@@ -1,0 +1,11 @@
+body {
+    padding: 20px;
+    background-color: springgreen;
+    color: #9400d3;
+  }
+
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
